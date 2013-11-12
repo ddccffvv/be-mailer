@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="panel panel-primary">
+    <a name="post"></a>
+    <div class="panel panel-heading">
+        Confirm recipient details:
+    </div>
+    <div class="panel panel-body">
+        You'd like the letter delivered to:
+        <hr>
+        <ul class="list-unstyled">
+            <li>Name: {{info.name}}</li>
+            <li>Street + Number: {{info.address}}</li>
+            <li>City: {{info.city}}</li>
+        </ul>
+        <hr>
+        <p>Are these correct? Push the button below to confirm.</p>
+        <form action="/charge" method="post">
+            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}"></script>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

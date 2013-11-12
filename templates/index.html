@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class=jumbotron>
+    <h1>Quick and easy mail in Belgium</h1>
+    <p>Send your documents through the Belgian Post. It's quick and
+    easy!</p>
+    <p>Just 5 easy steps to post your mail. Send it anytime you
+    want, everything will be dropped in the mail on the next business
+    day.</p>
+    <center>
+        <a href="#post" type="button" class="btn btn-lg btn-success">Post
+            some mail!</a>
+    </center>
+</div>
+<hr>
+<center>
+    <div class="well">
+        <h2>Instructions: it's easy!</h2>
+        <p><span class="glyphicon glyphicon-forward"></span> Write your
+        letter on your own computer</li>
+        <p><span class="glyphicon glyphicon-forward"></span> Upload the
+        document below</p>
+        <p><span class="glyphicon glyphicon-forward"></span> Tell us
+        where it needs to go</p>
+        <p><span class="glyphicon glyphicon-forward"></span> Enter
+        payment details</p>
+        <p><span class="glyphicon glyphicon-saved"></span> Send!</p>
+        <a href="#post" type="button" class="btn btn-lg
+            btn-success">Post mail!</a>
+    </div>
+</center>
+<hr>
+
+<div class="panel panel-primary">
+    <a name="post"></a>
+    <div class="panel panel-heading">
+        Post your mail <small>(All fields are required)</small>:
+    </div>
+    <div class="panel panel-body">
+        <form role="form" action="/" method=post enctype=multipart/form-data>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Your
+                    own email</label>
+                <input class="form-control" type=text name=email>
+            </div>
+            <div class="form-group">
+                <input type=file name=file>
+                <p class="help-block">Select the file you'd like posted</p>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Recipient name</label>
+                <input class="form-control" type=text name=name>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Street + number</label>
+                <input class="form-control" type=text name=address>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Zip code + city</label>
+                <input class="form-control" type=text name=city>
+            </div>
+            <button type="submit" class="btn btn-lg btn-success">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
